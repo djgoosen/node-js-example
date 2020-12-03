@@ -10,4 +10,4 @@ RUN echo "Cloning med3web repo"; git clone https://github.com/epam/med3web.git
 
 WORKDIR /root/med3web/
 
-RUN echo "Installing and starting npm"; npm install; npm run start &
+RUN echo "Installing and starting npm"; npm install; npm run start 
