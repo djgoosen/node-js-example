@@ -1,13 +1,12 @@
-FROM fedora:latest
+FROM node:12
 
-RUN echo "Updating all fedora packages and installing nodejs"; dnf -y update; dnf -y clean all; dnf -y install nodejs git
+WORKDIR /usr/src/app
 
-EXPOSE 3000
+COPY package*.json ./
 
-WORKDIR /root/
+RUN npm install
 
-RUN echo "Cloning med3web repo"; git clone https://github.com/epam/med3web.git
+COPY . .
 
-WORKDIR /root/med3web/
-
-RUN echo "Installing and starting npm"; npm install; npm install -g pm2; pm2 start npm -- start
+EXPOSE 8080
+CMD [ "node", "server.js" ]
