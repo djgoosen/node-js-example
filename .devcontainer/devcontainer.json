@@ -1,0 +1,9 @@
+{
+  "name": "hframe",
+  "image": "mcr.microsoft.com/devcontainers/base:bookworm",
+  "mounts": [
+    "source=${localWorkspaceFolder}/..,target=/workspaces/hframe-root,type=bind,consistency=cached",
+    "source=${localWorkspaceFolder}/../.hframe,target=/workspaces/.hframe,type=bind,consistency=cached,readonly"
+  ],
+  "postCreateCommand": "git config --global --get-all safe.directory 2>/dev/null | grep -qFx '*' || git config --global --add safe.directory '*'"
+}
