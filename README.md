@@ -1,11 +1,23 @@
 # hframe
 
-## Requirements
+## Validation workflow
 
-- Node.js 20 or newer (see `.nvmrc`)
+Install dependencies:
 
-## Scripts
+```bash
+npm install
+```
 
-- `npm start` — run the service with Node.js
-- `npm run dev` — run the service in watch mode
-- `npm test` — run the Node.js test runner
+Run the automated test suite:
+
+```bash
+npm test
+```
+
+Run the full validation workflow, including a container sanity check:
+
+```bash
+npm run validate:all
+```
+
+The container validation builds the local Docker image and runs the test suite inside the container so the modernized service can be verified in both local and containerized environments.
