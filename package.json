@@ -2,6 +2,15 @@
   "name": "hframe",
   "version": "1.0.0",
   "private": true,
+  "description": "Modernized Node.js service entrypoint",
+  "main": "src/server.js",
+  "type": "commonjs",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "node --watch src/server.js",
   "description": "Modernized Node.js service",
   "main": "server.js",
   "scripts": {
