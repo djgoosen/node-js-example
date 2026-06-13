@@ -4,55 +4,68 @@
 Ship a modernized, test-backed Node.js web service that follows current runtime and container best practices.
 
 ## In-Scope Chains
-
-1. Baseline the repository and identify the missing service/runtime pieces.
-2. Define the Node package contract, scripts, and runtime expectations.
-3. Implement a minimal web service with a health endpoint and configuration handling.
-4. Add automated tests plus local lint/test workflows.
-5. Containerize the service and verify it runs correctly in Docker.
-6. Document how to run, test, and containerize the service.
+- Audit the current service and capture a concrete modernization plan.
+- Update package metadata, npm scripts, and application startup for a current Node.js runtime.
+- Add a basic automated test harness, then deepen API coverage as request handling is modularized.
+- Harden configuration handling and refresh container setup for current deployment practices.
+- Add a repeatable validation workflow and document how to run the service and proofs.
 
 ## Deferred Work
-
-- Production deployment manifests or cloud hosting setup
-- CI/CD workflow automation for the upstream app repo
-- Feature endpoints beyond a minimal health/status surface
-- Observability, metrics, auth, and persistence layers
+- New product features beyond parity with the current service behavior.
+- Major framework migration unless the audit proves it is required for startup or testability.
+- Production observability, scaling, or platform-specific deployment automation beyond container sanity checks.
 
 ## Critical Path
+PIN-001 → PIN-002 → PIN-003 → PIN-005 → PIN-007 → PIN-008 → PIN-009 → PIN-010
 
-PIN-001 → PIN-002 → PIN-003 → PIN-004 → PIN-007 → PIN-008 → PIN-009
-
-Supporting proof tracks:
-- PIN-003 → PIN-005
-- PIN-002 → PIN-006
-- PIN-005 + PIN-006 + PIN-008 → PIN-010
+Parallel support path:
+PIN-002 → PIN-004 → PIN-006 → PIN-009
 
 ## Root Targets
-
-- PIN-001 — Establish a current Node.js service baseline and document missing app/runtime files
+- PIN-001 — Audit the current Node.js service structure, runtime files, and test entry points into a concrete modernization plan
 
 ## Risks
-
-- The upstream repo snapshot shows almost no application code, so the baseline may reveal missing expected files or an ambiguous service shape.
-- Container choices may depend on the Node version and package manager selected during package setup.
-- Early documentation assumptions can drift if the runnable service contract is not settled first.
+- The repo snapshot is thin, so the audit may uncover missing or outdated application files that force plan adjustments.
+- Runtime upgrades can expose breaking dependency or module-format issues.
+- Container changes may fail if the current service has undocumented startup or environment assumptions.
+- Test harness setup may require small structural refactors before stable API tests are possible.
 
 ## Owner-Class Summary
+- default: all planned sprint targets use the default owner class.
+## Retrospective
 
-- default: all planned sprint targets
+### Meta
 
-## Planned Targets
+- **Date / time**: 2026-06-13
+- **Scope**: sprint-1 wrap
 
-| ID | Depends on | Target |
-| --- | --- | --- |
-| PIN-001 | — | Establish a current Node.js service baseline and document missing app/runtime files |
-| PIN-002 | PIN-001 | Define package.json scripts, engine target, and dependency set for the service |
-| PIN-003 | PIN-002 | Create the application entrypoint and HTTP health endpoint |
-| PIN-004 | PIN-003 | Add environment/config loading with safe defaults for local and container runs |
-| PIN-005 | PIN-003 | Add automated tests for the health endpoint and startup behavior |
-| PIN-006 | PIN-002 | Add linting and test commands that run cleanly in the Node project |
-| PIN-007 | PIN-004 | Create a modern Dockerfile and .dockerignore for the Node service |
-| PIN-008 | PIN-007 | Add container runtime verification for the service health endpoint |
-| PIN-009 | PIN-006 | Document local development and container usage in a root README |
-| PIN-010 | PIN-005 | Run end-to-end sprint hardening and close gaps from baseline to tested containerized service |
+### Stats
+
+- **PB-1 artifact bundle:** `pinion/sprints/artifacts/sprint-1/`
+
+- **Lines added** (sum): 0
+- **Net lines** (sum): 0
+- **Estimated input tokens** (sum): 0
+
+_No per-unit merge stats for units in this sprint._
+
+### What happened
+
+(1–2 sentences: what was the outcome of this sprint?)
+
+### 5 whys
+
+1. **Why did it happen?** …
+2. **Why was that?** …
+3. **Why?** …
+4. **Why?** …
+5. **Why?** (root cause)
+
+### Actions
+
+- [ ] (Action item 1)
+- [ ] (Action item 2)
+
+### Notes
+
+(Optional: follow-up PINs, next sprint.)
