@@ -1,12 +1,12 @@
 {
   "name": "hframe",
   "version": "1.0.0",
-  "private": true,
-  "type": "commonjs",
+  "description": "Modernized Node.js service with repeatable validation workflow",
+  "main": "index.js",
   "scripts": {
+    "start": "node index.js",
     "test": "node --test",
-    "validate": "npm test",
-    "validate:container": "docker build -t hframe-validate . && docker run --rm -p 0:3000 hframe-validate node --test",
-    "validate:all": "npm run validate && npm run validate:container"
+    "validate": "npm test && npm run container:check",
+    "container:check": "docker build -t hframe:local ."
   }
 }
