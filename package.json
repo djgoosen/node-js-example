@@ -1,10 +1,11 @@
 {
-  "name": "node-js-example",
+  "name": "hframe",
   "version": "1.0.0",
   "private": true,
-  "type": "module",
-  "main": "index.js",
+  "description": "Modernized Node.js service",
+  "main": "server.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "node server.js",
+    "test": "node --test"
   }
 }
