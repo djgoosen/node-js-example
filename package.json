@@ -4,7 +4,9 @@
   "private": true,
   "type": "commonjs",
   "scripts": {
-    "start": "node index.js",
-    "test": "node --test"
+    "test": "node --test",
+    "validate": "npm test",
+    "validate:container": "docker build -t hframe-validate . && docker run --rm -p 0:3000 hframe-validate node --test",
+    "validate:all": "npm run validate && npm run validate:container"
   }
 }
